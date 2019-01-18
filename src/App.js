@@ -8,6 +8,8 @@ import { getTasksForTaskManager } from './actions/taskAction';
 //components
 import Header from './components/Header/index';
 import Home from './components/Home/index';
+import TasksTabble from './components/TasksTabble/index';
+import NotFound from './components/NotFound/index';
 
 
 class App extends Component {
@@ -23,8 +25,8 @@ class App extends Component {
           <Header/>
           <Switch>
             <Route  exact path='/' component={Home}/>
-            {/*<Route  path='/task_page' component={}/>
-            <Route  path='' component={}/> */}
+            <Route  path='/task_page' component={TasksTabble}/>
+            <Route  component={NotFound}/>
           </Switch>
         </div>
       </BrowserRouter>

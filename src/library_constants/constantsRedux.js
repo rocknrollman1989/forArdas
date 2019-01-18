@@ -1,0 +1,3 @@
+export const LOAD_ERROR_DATA = 'LOAD_ERROR_DATA';
+export const  LOAD_DATA_PROCESS = 'LOAD_DATA_PROCESS';
+export const LOAD_DATA_DONE = 'LOAD_DATA_DONE';
