@@ -10,16 +10,15 @@ class TaskShortInfo extends React.Component {
         const myTags = task.tags && task.tags.length ? task.tags.map((elem, i) => {
                     return <span key={i}> #{elem}</span>;
                 }) : null;
-        //////////// image!! кинуть!!
         return (
             <>
             <div className="task-row">
                 <p>{item + 1}</p>
-                {task.is_high_priority ? <p>{task.is_high_priority}</p> : <p/>}
-                <Link to={`${match.url}/${task.id}`}><p className={task.is_high_priority ? 'impornant-task' : ' '} >{task.name}</p></Link>
+                {task.is_high_priority ? <p style={{color: 'red'}}>!!!</p> : <p/>}
+                <Link to={`${match.url}/${task.id}`}><p className={task.is_high_priority ? 'impornant-task' : 'simple-task'} >{task.name}</p></Link>
                 <p>{task.actual_effort}</p>
                 <p>{task.estimated_effort}</p>
-                <p style={{width: '200px'}}>{task.due_date}</p>
+                <p>{task.due_date}</p>
                 <p>{myTags}</p>
             </div>
             </>

@@ -1,14 +1,16 @@
 import  React  from 'react';
 import { connect } from 'react-redux';
 import { errorDownloadData, downloadingProcess } from '../../library_constants/library';
+import { Route } from 'react-router-dom';
+import './style.css';
+
+//components
+
 import TaskShortInfo from '../TaskShortInfo';
 import TaskInfo from '../TaskInfo/index';
-import { Route } from 'react-router-dom';
-
 
 
 class TasksTabble extends React.Component {
-
 
     render() {
 
@@ -24,10 +26,19 @@ class TasksTabble extends React.Component {
         return (
             <div className="main-section-tasks">
                 <Route path={`${match.path}/:topicId`} component={TaskInfo} />
-                <h2>Tasks manager</h2>
+                <h2>Your Tasks</h2>
                 <div className="main-section-tabble-of-tasks">
                     {loadDataError && <p>{errorDownloadData}</p>}
                     {loadDataProcess && <p>{downloadingProcess}</p>}
+                    <div className="name-of-tasks-in-tabble">
+                        <p></p>
+                        <p></p>
+                        <p>Name</p>
+                        <p>Actual effort</p>
+                        <p>Task estimated effort</p>
+                        <p>Task due date</p>
+                        <p>MyTags</p>
+                    </div>
                     <div>
                         {taskItems}
                     </div>
@@ -47,11 +58,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    };
-};
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(TasksTabble);
+export default connect(mapStateToProps)(TasksTabble);

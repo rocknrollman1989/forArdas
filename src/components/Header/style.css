@@ -4,7 +4,22 @@ header{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background: rgba(144, 200, 238, 0.7);
+    border-radius: 20px;
+
+}
+p{
+    font-size: 18px;
+    font-weight: bold;
 }
 .header-links-block>a{
     margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #048af9;
+    transition: 0.5s;
+}
+.header-links-block>a:hover{
+    color: #004a88;
+    cursor: pointer;
 }

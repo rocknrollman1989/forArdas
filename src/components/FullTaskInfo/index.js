@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 const FullTaskInfo = ({props, correctTask, state }) => {
 
@@ -11,9 +12,8 @@ const FullTaskInfo = ({props, correctTask, state }) => {
 
     return (
         <>
-        <div className="names-of-fields"></div>
         <div className="task-info-field">
-            <p onClick={()=>{correctTask();}}>{state.taskName || props.name}</p>
+            <p onClick={()=>{correctTask();}} className="accent-name">{state.taskName || props.name}</p>
             <p>{ state.taskActualEffort || props.actual_effort}</p>
             <p>{state.taskEstimatedEffort || props.estimated_effort}</p>
             <p>{state.taskDueDate || props.due_date}</p>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { saveTaskIntoTaskManager } from '../../actions/taskAction';
+import PropTypes from 'prop-types';
 import FullTaskInfo from '../FullTaskInfo/index';
 import NewTaskInfo from '../NewTaskInfo/index';
-import { saveTaskIntoTaskManager } from '../../actions/taskAction';
+import './style.css';
 
 
 
@@ -19,12 +22,12 @@ class TaskInfo extends React.Component{
             taskPhysicalProgress: '',
             taskDescription: '',
             taskTags: null,
-            taskId: [],
+            taskId: null,
             taskProjectId: '',
             taskObjStatus: '',
             taskCreationDay: ''
         }
-//тэги доделать
+
         correctTask = () => {
             const { taskToShow } = this.props;
             this.setState({correctTask: !this.state.correctTask},
@@ -38,7 +41,7 @@ class TaskInfo extends React.Component{
                                     taskPhysicalProgress: taskToShow.physical_progress,
                                     taskDescription: taskToShow.description,
                                     taskTags: taskToShow.tags,
-                                    taskId: taskToShow.id,
+                                    taskId: taskToShow.id || null,
                                     taskProjectId: taskToShow.project_id,
                                     taskCreationDay: taskToShow.creation_date,
                                     taskObjStatus: taskToShow.obj_status
@@ -46,6 +49,7 @@ class TaskInfo extends React.Component{
                             );
 
         }
+
 
         handleFieldOnChange = (e) => {
             const { name, value } = e.target;
@@ -61,7 +65,8 @@ class TaskInfo extends React.Component{
         const { taskToShow } = this.props;
         return (
 
-            <div className="task-wrapper">
+            <div className="task-wrapper" >
+                <Link to='/task_page'>Close</Link>
                 {taskToShow && !this.state.correctTask && <FullTaskInfo props={taskToShow} correctTask={this.correctTask} state={this.state}/>}
                 {this.state.correctTask && <NewTaskInfo {...this.state} handleFieldOnChange={this.handleFieldOnChange} SaveNewTaskInfo={this.SaveNewTaskInfo}/>}
             </div>

@@ -46,7 +46,6 @@ export const getTasksForTaskManager = () => {
 
 export const saveTaskIntoTaskManager = (data) => {
     return (dispatch) => {
-        // console.log(data);
         let taskToSave = {
             id: data.taskId,
             name: data.taskName,

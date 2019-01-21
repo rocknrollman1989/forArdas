@@ -1,0 +1,15 @@
+.task-wrapper{
+    width: 80%;
+    position: fixed;
+    background: rgba(126, 194, 236, 0.8);
+    top: 15%;
+    margin-left: -40%;
+    left: 50%;
+    border-radius: 40px;
+
+}
+.task-wrapper>a{
+    position: absolute;
+    right: 10%;
+    top: 30px;
+}

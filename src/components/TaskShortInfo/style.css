@@ -1,14 +1,27 @@
 .task-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 10% 10% 20% 10% 10% 30% 10%;
     width: 100%;
 }
+.simple-task{
+    font-weight: bold;
+    color: #034479;
+    transition: 0.5s;
+}
+.impornant-task{
+    color:#f44336;
+    transition: 0.5s;
+    font-weight: bold;
+}
+.impornant-task:hover{
+    color:#2293ef;
+    cursor: pointer;
 
-.task-row>p{
-    font-size: 16px;
-    margin: 0 10px;
-    width: 40px;
-    color: red;
+}
+.simple-task:hover{
+    color: #2293ef;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
 }

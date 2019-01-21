@@ -1,6 +1,7 @@
 export const formatDate = (stringDate) => {
     let date = new Date(stringDate);
-    return date.toLocaleString();
+    let dateForUser = date.toLocaleString();
+    return dateForUser;
 };
 
 export const formatDateToISOSString = (time) => {
