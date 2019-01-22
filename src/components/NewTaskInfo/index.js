@@ -16,7 +16,7 @@ const NewTaskInfo = (props) => {
                 <input type="text" value={props.taskIsArchived} name='taskIsArchived' onChange={(e) => {props.handleFieldOnChange(e);}}/>
                 <input type="text" value={props.taskIsCompleted} name='taskIsCompleted' onChange={(e) => {props.handleFieldOnChange(e);}}/>
                 <input type="text" value={props.taskTags || ''} name='taskTags' onChange={(e) => {props.handleFieldOnChange(e);}}/>
-                <input type="button" value="save" onClick = {() => { props.SaveNewTaskInfo();}}/>
+                <input type="button" value="save" onClick = {() => { props.saveNewTaskInfo();}}/>
             </form>
         </div>
     );

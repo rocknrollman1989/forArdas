@@ -55,7 +55,7 @@ class TaskInfo extends React.Component{
             this.setState({ [name] : value });
         }
 
-        SaveNewTaskInfo = () => {
+        saveNewTaskInfo = () => {
            this.setState({ correctTask: false});
            this.props.saveTaskIntoTaskManager(this.state);
         }
@@ -67,14 +67,14 @@ class TaskInfo extends React.Component{
             <div className="task-wrapper" >
                 <Link to='/task_page'>Close</Link>
                 {taskToShow && !this.state.correctTask && <FullTaskInfo props={taskToShow} correctTask={this.correctTask} state={this.state}/>}
-                {this.state.correctTask && <NewTaskInfo {...this.state} handleFieldOnChange={this.handleFieldOnChange} SaveNewTaskInfo={this.SaveNewTaskInfo}/>}
+                {this.state.correctTask && <NewTaskInfo {...this.state} handleFieldOnChange={this.handleFieldOnChange} saveNewTaskInfo={this.saveNewTaskInfo}/>}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
-    let taskToShow = Number(ownProps.match.params.topicId);
+    const taskToShow = Number(ownProps.match.params.topicId);
     return {
         taskToShow: state.eventReducer.arrayOfTasks.find((task) => {return task.id === taskToShow;}),
         loadDataError: state.eventReducer.loadDataError,
