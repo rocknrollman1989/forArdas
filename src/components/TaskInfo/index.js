@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { saveTaskIntoTaskManager } from '../../actions/taskAction';
-import PropTypes from 'prop-types';
 import FullTaskInfo from '../FullTaskInfo/index';
 import NewTaskInfo from '../NewTaskInfo/index';
 import './style.css';

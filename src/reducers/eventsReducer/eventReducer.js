@@ -1,6 +1,6 @@
 import { LOAD_ERROR_DATA, LOAD_DATA_PROCESS, LOAD_DATA_DONE, SAVE_CORRECT_TASK } from '../../library_constants/constantsRedux';
 
-const initState = {
+export const initState = {
     arrayOfTasks: [],
     loadDataError: false,
     loadDataProcess: false
@@ -28,7 +28,6 @@ const eventReducer = (state = initState, action) => {
                 ...state,
                 loadDataProcess: false,
                 arrayOfTasks: action.data,
-
             };
         case SAVE_CORRECT_TASK:
                 let changeTasks = state.arrayOfTasks.map((item) => {
